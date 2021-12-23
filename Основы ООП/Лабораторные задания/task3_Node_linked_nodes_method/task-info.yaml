@@ -3,26 +3,26 @@ files:
 - name: task.py
   visible: true
   placeholders:
-  - offset: 1025
-    length: 31
+  - offset: 1057
+    length: 100
     placeholder_text: '...  # TODO реализовать функцию'
     initial_state:
       length: 31
       offset: 1025
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Failed
     encrypted_possible_answer: left_node.set_next(right_node)
-  - offset: 1142
-    length: 71
+  - offset: 1243
+    length: 105
     placeholder_text: '...  # TODO связать между собой два узла с помощью функции
       linked_nodes'
     initial_state:
       length: 71
       offset: 1142
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Failed
     encrypted_possible_answer: linked_nodes(first_node, second_node)
   text: |
     from typing import Any, Optional
@@ -82,5 +82,12 @@ files:
     Node(1, Node(2, None))
     Node(2, None)
   learner_created: false
-status: Unchecked
+status: Failed
+feedback:
+  message: Incorrect
+  time: Thu, 23 Dec 2021 18:07:31 UTC
+  expected: |
+    Node(1, Node(2, None))
+    Node(2, None)
+  actual: <no output>
 record: -1

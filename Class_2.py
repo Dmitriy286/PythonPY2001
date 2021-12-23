@@ -9,7 +9,6 @@ class TelegramBot:
         self.menu_1 = menu_1
         self.menu_2 = menu_2
 
-
     def welcome_message(self, message_1: str) -> str:
         """
         Функция, устанавливающая приветственное сообщение пользователю
@@ -18,7 +17,6 @@ class TelegramBot:
         :return: текст сообщения, которое видит пользователь
         """
         ...
-
 
     def max_message_amount(self, amount: int) -> int:
         """
@@ -30,12 +28,11 @@ class TelegramBot:
         """
         ...
 
-
     def bye_message(self, message_2: str) -> str:
         """
         Функция, устанавливающая прощальное сообщение пользователю
 
-        :param message_1: текст сообщения
+        :param message_2: текст сообщения
         :return: текст сообщения, которое видит пользователь
         """
         ...

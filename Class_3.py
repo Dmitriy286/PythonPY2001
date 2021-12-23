@@ -7,7 +7,6 @@ class GasStation:
         :param number_of_cars: количество автомобилей
         """
         self.petroleum_type = petroleum_type
-        self.petroleum_amount = petroleum_amount
         self.number_of_cars = number_of_cars
 
     def petroleum_amount(self, amount: int) -> dict:
@@ -19,11 +18,11 @@ class GasStation:
         """
         ...
 
-    def car_types(self, type: str) -> dict:
+    def car_types(self, type_: str) -> dict:
         """
         Функция, определяющая, какому количеству автомобилей требуется какое количество топлива
 
-        :param type: тип автомобиля
+        :param type_: тип автомобиля
         :return: словарь с указанием типа автомобиля, потребляемого топлива и его количества
         """
         ...
