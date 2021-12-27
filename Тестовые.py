@@ -35,3 +35,5 @@ def func_3(*args):
 if __name__ == "__main__":
     func = func_0(7, 8)
     func_3([9, func], 2)
+
+    # как в isinstance передать несколько переменных сразу для проверки
