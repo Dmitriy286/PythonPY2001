@@ -5,7 +5,7 @@ class Date:
         (31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31)  # високосный
     )
 
-    __slots__ = ('day', 'month', 'year', 'max_day')
+    __slots__ = ('day', 'month', 'year')
 
     def __init__(self, day: int, month: int, year: int):
         self.day = day
@@ -14,8 +14,8 @@ class Date:
 
         self.is_valid_date(self.day, self.month, self.year)
 
-        self.max_day = None
-        self.get_max_day(self.month, self.year)
+        # self.max_day = None
+        # self.get_max_day(self.month, self.year)
 
     def is_leap_year(self, year: int):
         """Проверяет, является ли год високосным"""
@@ -31,13 +31,12 @@ class Date:
 
     def get_max_day(self, month: int, year: int):
         """Возвращает максимальное количество дней в месяце для указанного года"""
-        self.max_day = self.is_leap_year(year)[month - 1]
-        print(type(self.max_day))
-        # return self.max_day
+
+        return self.is_leap_year(year)[month - 1]
         # TODO
 
-    # @classmethod # classmethod т.к. он одинаков для всех лет. Любой год будет проходить такую проверку.
-    def is_valid_date(self, day: int, month: int, year: int):
+    @classmethod # classmethod т.к. он одинаков для всех лет. Любой год будет проходить такую проверку.
+    def is_valid_date(cls, day: int, month: int, year: int):
         """Проверяет, является ли дата корректной"""
 
         if not isinstance(day, int):
@@ -46,8 +45,8 @@ class Date:
         if day <= 0:
             raise ValueError("Вы ввели отрицательное число")
 
-        if day > self.max_day:
-            raise ValueError("В текущем месяце меньше дней")
+        # if day > self.max_day:
+        #     raise ValueError("В текущем месяце меньше дней")
 
         if not isinstance(month, int):
             raise TypeError("Вы ввели не число")

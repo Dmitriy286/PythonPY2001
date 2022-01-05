@@ -3,14 +3,14 @@ files:
 - name: main.py
   visible: true
   placeholders:
-  - offset: 165
+  - offset: 222
     length: 138
     placeholder_text: |-
       self.capacity_volume = capacity_volume  # объем стакана
               self.occupied_volume = occupied_volume  # объем жидкости в стакане
     initial_state:
-      length: 130
-      offset: 144
+      length: 138
+      offset: 165
     initialized_from_dependency: false
     selected: true
     status: Solved

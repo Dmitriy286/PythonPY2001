@@ -3,12 +3,12 @@ files:
 - name: main.py
   visible: true
   placeholders:
-  - offset: 2924
+  - offset: 3566
     length: 642
     placeholder_text: '...  # TODO реализовать алгоритм вставки элемента'
     initial_state:
-      length: 49
-      offset: 2863
+      length: 642
+      offset: 2924
     initialized_from_dependency: false
     selected: true
     status: Solved

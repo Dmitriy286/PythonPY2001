@@ -4,10 +4,10 @@ files:
   visible: true
   placeholders:
   - offset: 246
-    length: 87
+    length: 406
     placeholder_text: '...  # TODO инициализировать связный список'
     initial_state:
-      length: 43
+      length: 87
       offset: 246
     initialized_from_dependency: false
     selected: true
@@ -16,12 +16,12 @@ files:
       if data is not None:
                   for value in data:
                       self.append(value)
-  - offset: 1525
+  - offset: 1844
     length: 70
     placeholder_text: '...  # TODO реализовать алгоритм добавления узла в конец последовательности'
     initial_state:
-      length: 75
-      offset: 1481
+      length: 70
+      offset: 1525
     initialized_from_dependency: false
     selected: true
     status: Solved
