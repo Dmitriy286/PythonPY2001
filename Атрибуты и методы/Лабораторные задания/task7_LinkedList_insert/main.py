@@ -96,7 +96,32 @@ class LinkedList:
         return f"{self.to_list()}"
 
     def insert(self, index: int, value: Any) -> None:
-        ...  # TODO реализовать алгоритм вставки элемента
+        if not isinstance(index, int):
+            raise TypeError()
+
+        if index == 0:
+            left_node = Node(value)
+            right_node = self.step_by_step_on_nodes(index)
+            self.linked_nodes(left_node, right_node)
+            self.head = left_node
+            self.len += 1
+
+        elif index >= self.len:
+
+            self.append(value)
+
+        else:
+
+            insert_node = Node(value)
+            prev_node = self.step_by_step_on_nodes(index - 1)
+            next_node = self.step_by_step_on_nodes(index)
+            insert_node.next = next_node
+            prev_node.next = insert_node
+
+            self.len += 1
+
+
+    # TODO реализовать алгоритм вставки элемента
 
 
 if __name__ == '__main__':

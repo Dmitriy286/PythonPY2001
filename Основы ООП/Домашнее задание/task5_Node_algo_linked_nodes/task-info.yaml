@@ -4,22 +4,22 @@ files:
   visible: true
   placeholders:
   - offset: 628
-    length: 76
+    length: 57
     placeholder_text: '...  # TODO метод должен возвращать значение текущего узла'
     initial_state:
-      length: 58
+      length: 57
       offset: 628
     initialized_from_dependency: false
     selected: true
     status: Solved
     encrypted_possible_answer: return str(self.value)
-  - offset: 1339
-    length: 428
+  - offset: 1658
+    length: 69
     placeholder_text: '# TODO реализуйте алгоритм, который свяжет между собой узлы
       в списке'
     initial_state:
-      length: 68
-      offset: 1325
+      length: 69
+      offset: 1676
     initialized_from_dependency: false
     selected: true
     status: Solved

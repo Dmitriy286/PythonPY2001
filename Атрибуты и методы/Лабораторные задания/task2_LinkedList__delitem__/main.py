@@ -44,10 +44,10 @@ class LinkedList:
         """ Функция выполняет перемещение по узлам до указанного индекса. И возвращает узел. """
 
         if not isinstance(index, int):
-            raise TypeError()
+            raise TypeError("Первый тайпэррор")
 
         if not 0 <= index < self.len:  # для for
-            raise IndexError()
+            raise IndexError("Первый индексэррор")
 
         current_node = self.head
         for _ in range(index):
@@ -66,9 +66,38 @@ class LinkedList:
         node.value = value
 
     def __delitem__(self, index: int):
-        ...  # TODO проверка индекса
 
-        ...  # TODO алгоритм удаления
+        if not isinstance(index, int):
+            raise TypeError("Введено не число")  # TODO проверка индекса
+
+        if not 0 <= index < self.len:
+            raise IndexError("Переданный индекс выходит за рамки длины списка")
+
+
+        if index == 0:
+            if self.len > 1:
+                self.head = self.step_by_step_on_nodes(index + 1)
+                self.step_by_step_on_nodes(index).next = None
+                self.len -= 1
+            else:
+                    self.head = None
+                    self.len = 0
+
+        elif index == self.len - 1:
+            previous_node = self.step_by_step_on_nodes(index - 1)
+            previous_node.next = None
+            self.len -= 1
+        else:
+            delited_node = self.step_by_step_on_nodes(index)
+            pre_delited_node = self.step_by_step_on_nodes(index - 1)
+            post_delited_node = self.step_by_step_on_nodes(index + 1)
+            # pre_delited_node.next = post_delited_node
+            # delited_node.next = None
+            self.linked_nodes(pre_delited_node, post_delited_node)
+            delited_node.next = None
+
+
+            self.len -= 1 # TODO алгоритм удаления
 
     def to_list(self) -> list:
         return [linked_list_value for linked_list_value in self]
