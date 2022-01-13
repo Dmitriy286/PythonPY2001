@@ -136,4 +136,21 @@ def is_leap_year(year: int):
         return DAY_OF_MONTH[0]
 
 print(is_leap_year(2020)[1])
+print("-------------------------: 1")
 
+
+def qq():
+    a = 1
+    b = 2
+    print(a)
+    return b
+qq()
+# print(qq())
+q = qq()
+print("-------------------------: 2")
+print(q)
+print("-------------------------")
+print(qq)
+print("-------------------------")
+print(qq())
+print("-------------------------")

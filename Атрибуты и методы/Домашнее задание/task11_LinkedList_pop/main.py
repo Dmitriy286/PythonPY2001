@@ -2,6 +2,7 @@ from typing import Iterable, Optional, Any
 
 from node import Node
 
+
 class LinkedList:
     def __init__(self, data: Iterable = None):
         """Конструктор связного списка"""
@@ -9,7 +10,7 @@ class LinkedList:
         self.head: Optional[Node] = None
 
         for value in data:
-            self.append(value)# TODO инициализировать связный список
+            self.append(value)  # TODO инициализировать связный список
 
     def step_by_step_on_nodes(self, index: int) -> Node:
         """ Функция выполняет перемещение по узлам до указанного индекса. И возвращает узел. """
@@ -53,17 +54,16 @@ class LinkedList:
     def append(self, value: Any):
         """ Добавление элемента в конец связного списка. """
         # TODO реализовать алгоритм добавления узла в конец последовательности
-        append_node = Node(value) # right_node
+        append_node = Node(value)  # right_node
         if self.head is None:
             self.head = append_node
         else:
-            last_node = self.step_by_step_on_nodes(self.len - 1) # left_node
+            last_node = self.step_by_step_on_nodes(self.len - 1)  # left_node
             self.linked_nodes(last_node, append_node)
         self.len += 1
 
     def extend(self, iterable):
         for iter_value in iterable:
-
             last_node = self.step_by_step_on_nodes(self.len - 1)
             new_node = Node(iter_value)
             self.linked_nodes(last_node, new_node)
@@ -78,15 +78,14 @@ class LinkedList:
         if not 0 <= index < self.len:
             raise IndexError("Переданный индекс выходит за рамки длины списка")
 
-
         if index == 0:
             if self.len > 1:
                 self.head = self.step_by_step_on_nodes(index + 1)
                 self.step_by_step_on_nodes(index).next = None
                 self.len -= 1
             else:
-                    self.head = None
-                    self.len = 0
+                self.head = None
+                self.len = 0
 
         elif index == self.len - 1:
             previous_node = self.step_by_step_on_nodes(index - 1)
@@ -106,7 +105,6 @@ class LinkedList:
     # def None_proof(self):
     #     if self is None:
     #         raise ValueError("Нечего удалять")
-
 
     def pop(self, index: Optional[int] = None):
         # self.None_proof()
@@ -134,7 +132,6 @@ if __name__ == "__main__":
 
     print(ll.pop(1))
 
-
     ll.pop(1)
     print(ll)
 
@@ -144,5 +141,4 @@ if __name__ == "__main__":
     # ll.pop(0)
     # print(ll)
 
-
-#fixme как реализовать функция проверки, что self is None?
+# fixme как реализовать функция проверки, что self is None?
