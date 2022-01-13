@@ -104,12 +104,18 @@ class LinkedList:
             self.len -= 1
 
     # def None_proof(self):
+    #     if not self:
+    #         raise ValueError("Нечего удалять")
     #     if self is None:
     #         raise ValueError("Нечего удалять")
 
 
     def pop(self, index: Optional[int] = None):
         # self.None_proof()
+
+        if not self:
+            raise ValueError("Нечего удалять")
+
         if index is None:
             index = self.len - 1
 
@@ -141,8 +147,8 @@ if __name__ == "__main__":
     ll.pop(0)
     print(ll)
 
-    # ll.pop(0)
-    # print(ll)
+    ll.pop(0)
+    print(ll)
 
 
 #fixme как реализовать функция проверки, что self is None?

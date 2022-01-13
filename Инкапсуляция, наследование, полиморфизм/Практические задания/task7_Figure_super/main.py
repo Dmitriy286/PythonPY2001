@@ -7,8 +7,8 @@ class Figure:
 
 
 class Rectangle(Figure):
-    def __init__(self, a, b, name=None):
-        # TODO вызвать конструктор базового класса
+    def __init__(self, a, b, name_1=None):
+        super().__init__(name=name_1) # TODO вызвать конструктор базового класса
         self.a = a
         self.b = b
 
