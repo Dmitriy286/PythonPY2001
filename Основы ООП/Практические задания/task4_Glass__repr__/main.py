@@ -7,8 +7,11 @@ class Glass:
         self.occupied_volume = occupied_volume  # объем жидкости в стакане
 
     def __repr__(self) -> str:
+        return f"Glass({self.capacity_volume}, {self.occupied_volume})"
         ...  # TODO метод должен возвращать строку, по которой можно инициализировать экземпляр класса
 
+    def __str__(self) -> str:
+        return f"Стакан объемом {self.capacity_volume}. Объем жидкости = {self.occupied_volume}"
 
 if __name__ == "__main__":
     glass = Glass(200, 100)  # экземпляр класса

@@ -14,19 +14,70 @@ class Date:
 
         self.is_valid_date(self.day, self.month, self.year)
 
+        # self.max_day = None
+        # self.get_max_day(self.month, self.year)
+
     def is_leap_year(self, year: int):
         """Проверяет, является ли год високосным"""
-        ...  # TODO
+        # if year % 4 == 0:
+        #     return True
+        # else:
+        #     return False # TODO
+
+        if year % 4 == 0:
+            return self.DAY_OF_MONTH[1]
+        else:
+            return self.DAY_OF_MONTH[0]
 
     def get_max_day(self, month: int, year: int):
         """Возвращает максимальное количество дней в месяце для указанного года"""
-        ...  # TODO
 
-    def is_valid_date(self, day: int, month: int, year: int):
+        return self.is_leap_year(year)[month - 1]
+        # TODO
+
+    @classmethod # classmethod т.к. он одинаков для всех лет. Любой год будет проходить такую проверку.
+    def is_valid_date(cls, day: int, month: int, year: int):
         """Проверяет, является ли дата корректной"""
-        ...  # TODO
+
+        if not isinstance(day, int):
+            raise TypeError("Вы ввели не число")
+
+        if day <= 0:
+            raise ValueError("Вы ввели отрицательное число")
+
+        # if day > self.max_day:
+        #     raise ValueError("В текущем месяце меньше дней")
+
+        if not isinstance(month, int):
+            raise TypeError("Вы ввели не число")
+
+        if month <= 0:
+            raise ValueError("Вы ввели отрицательное число")# TODO
+
+        if not isinstance(year, int):
+            raise TypeError("Вы ввели не число")
+
+        if year  <= 0:
+            raise ValueError("Вы ввели отрицательное число")
+
+        if len(str(year)) != 4:
+            raise ValueError("Введите цифру года из четырех цифр")
+
+    def __repr__(self) -> str:
+        return f"{self.day}, {self.month}, {self.year}"
+
 
 
 if __name__ == "__main__":
-    # Write your solution here
-    pass
+    # day = int(input("Insert day: "))
+    # month = int(input("Insert month: "))
+    # year = int(input("Insert year: "))
+
+    day = 2
+    month = 3
+    year = 2021
+
+    date_1 = Date(day, month, year)
+    print(repr(date_1.get_max_day))
+    print(date_1.is_leap_year)
+    print(date_1)

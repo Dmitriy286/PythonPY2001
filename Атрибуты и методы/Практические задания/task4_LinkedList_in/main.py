@@ -2,7 +2,6 @@ from typing import Iterable, Optional, Any
 
 from node import Node
 
-
 class LinkedList:
     def __init__(self, data: Iterable = None):
         """Конструктор связного списка"""

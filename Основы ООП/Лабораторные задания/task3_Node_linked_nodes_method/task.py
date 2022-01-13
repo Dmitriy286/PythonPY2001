@@ -27,21 +27,33 @@ class Node:
         self.next = next_
 
 
-def linked_nodes(left_node: Node, right_node: Optional["Node"] = None) -> None:
+# def linked_nodes(left_node: Node, right_node: Optional["Node"] = None) -> None:
+#     """
+#     Функция, которая связывает между собой два узла.
+#
+#     :param left_node: Левый или предыдущий узел
+#     :param right_node: Правый или следующий узел
+#     """
+#     # left_node.next = right_node
+#     # return left_node  # TODO реализовать функцию
+
+
+
+def linked_nodes(*args):
     """
     Функция, которая связывает между собой два узла.
 
     :param left_node: Левый или предыдущий узел
     :param right_node: Правый или следующий узел
     """
-    ...  # TODO реализовать функцию
 
+    return args[0][1] == args[1]
 
 if __name__ == '__main__':
     first_node = Node(1)
     second_node = Node(2)
 
-    ...  # TODO связать между собой два узла с помощью функции linked_nodes
+    linked_nodes(first_node, second_node)  # TODO связать между собой два узла с помощью функции linked_nodes
 
     print(first_node)
     print(second_node)

@@ -122,22 +122,3 @@ class LinkedList:
 
 
     # TODO реализовать алгоритм вставки элемента
-
-
-if __name__ == '__main__':
-    list_ = [1, 2, 3]
-    linked_list = LinkedList(list_)
-    print(linked_list)
-
-    linked_list.insert(0, 0)
-    print(linked_list)
-
-    linked_list.insert(len(linked_list), len(linked_list))
-    print(linked_list)
-
-    linked_list.insert(100, 100)
-    print(linked_list)
-
-    linked_list.insert(2, "wow")
-    print(linked_list)
-    print(linked_list[2] == "wow")

@@ -11,17 +11,20 @@ class Node:
         :param next_: следующий узел, если он есть
         """
         self.value = value
-        self.next = next_
+
+        self.next = None
+        self.set_next(next_)
 
     def __repr__(self) -> str:
-        return f"Node({self.value}, {self.next})"
+        return f"Node({self.value}, {None})" if self.next is None else f"Node({self.value}, Node({self.next}))"
 
+    def __str__(self) -> str:
+        return str(self.value)
 
-if __name__ == '__main__':
-    first_node = Node(1)  # TODO инициализировать первый узел
+    def is_valid(self, node: Any) -> None:
+        if not isinstance(node, (type(None), Node)):
+            raise TypeError
 
-    second_node = Node(2)  # TODO инициализировать второй узел
-    first_node.next = second_node  # TODO через атрибут экземпляра устанавливаем первому узлу следующий узел
-
-    print(first_node)
-    print(second_node)
+    def set_next(self, next_: Optional["Node"] = None) -> None:
+        self.is_valid(next_)
+        self.next = next_
