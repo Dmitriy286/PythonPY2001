@@ -108,6 +108,9 @@ class LinkedList:
 
     def pop(self, index: Optional[int] = None):
         # self.None_proof()
+        if self.head is None:
+            raise ValueError("Нечего удалять")
+
         if index is None:
             index = self.len - 1
 

@@ -7,8 +7,8 @@ files:
     length: 112
     placeholder_text: '...  # TODO проверка индекса'
     initial_state:
-      length: 28
-      offset: 1992
+      length: 112
+      offset: 2022
     initialized_from_dependency: false
     selected: true
     status: Solved
@@ -22,8 +22,8 @@ files:
     length: 451
     placeholder_text: '...  # TODO алгоритм удаления'
     initial_state:
-      length: 29
-      offset: 2030
+      length: 451
+      offset: 2735
     initialized_from_dependency: false
     selected: true
     status: Solved

@@ -17,26 +17,30 @@ class Date:
         # self.max_day = None
         # self.get_max_day(self.month, self.year)
 
-    def is_leap_year(self, year: int):
+    @staticmethod
+    def is_leap_year(year: int):
         """Проверяет, является ли год високосным"""
-        # if year % 4 == 0:
-        #     return True
-        # else:
-        #     return False # TODO
-
         if year % 4 == 0:
-            return self.DAY_OF_MONTH[1]
+            return True
         else:
-            return self.DAY_OF_MONTH[0]
+            return False  # TODO
+
+        # if year % 4 == 0:
+        #     return self.DAY_OF_MONTH[1]
+        # else:
+        #     return self.DAY_OF_MONTH[0]
 
     def get_max_day(self, month: int, year: int):
         """Возвращает максимальное количество дней в месяце для указанного года"""
+        if self.is_leap_year(year) is False:
+            return self.DAY_OF_MONTH[0][month - 1]
+        else:
+            return self.DAY_OF_MONTH[1][month - 1]
 
-        return self.is_leap_year(year)[month - 1]
         # TODO
 
-    @classmethod # classmethod т.к. он одинаков для всех лет. Любой год будет проходить такую проверку.
-    def is_valid_date(cls, day: int, month: int, year: int):
+    # @classmethod # classmethod т.к. он одинаков для всех лет. Любой год будет проходить такую проверку.
+    def is_valid_date(self, day: int, month: int, year: int):
         """Проверяет, является ли дата корректной"""
 
         if not isinstance(day, int):
@@ -45,8 +49,8 @@ class Date:
         if day <= 0:
             raise ValueError("Вы ввели отрицательное число")
 
-        # if day > self.max_day:
-        #     raise ValueError("В текущем месяце меньше дней")
+        if day > self.get_max_day(month, year):
+            raise ValueError("В текущем месяце меньше дней")
 
         if not isinstance(month, int):
             raise TypeError("Вы ввели не число")
@@ -73,11 +77,16 @@ if __name__ == "__main__":
     # month = int(input("Insert month: "))
     # year = int(input("Insert year: "))
 
-    day = 2
-    month = 3
-    year = 2021
+    day_ = 25
+    month_: int = 2
+    year_ = 2021
 
-    date_1 = Date(day, month, year)
+    date_1 = Date(day_, month_, year_)
     print(repr(date_1.get_max_day))
     print(date_1.is_leap_year)
+    print(date_1.get_max_day(month_, year_))
+    print(date_1.is_leap_year(year_))
     print(date_1)
+    print(date_1.DAY_OF_MONTH[0][1])
+    print(date_1.DAY_OF_MONTH[1][1])
+

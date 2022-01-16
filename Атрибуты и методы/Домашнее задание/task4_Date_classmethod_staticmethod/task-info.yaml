@@ -3,32 +3,32 @@ files:
 - name: main.py
   visible: true
   placeholders:
-  - offset: 2114
+  - offset: 2254
     length: 95
     placeholder_text: '...  # TODO'
     initial_state:
       length: 95
-      offset: 643
+      offset: 2114
     initialized_from_dependency: false
     selected: true
     status: Solved
     encrypted_possible_answer: '...'
-  - offset: 2469
+  - offset: 2780
     length: 133
     placeholder_text: '...  # TODO'
     initial_state:
       length: 133
-      offset: 998
+      offset: 2469
     initialized_from_dependency: false
     selected: true
     status: Solved
     encrypted_possible_answer: '...'
-  - offset: 2825
+  - offset: 3136
     length: 441
     placeholder_text: '...  # TODO'
     initial_state:
       length: 441
-      offset: 1354
+      offset: 2825
     initialized_from_dependency: false
     selected: true
     status: Solved

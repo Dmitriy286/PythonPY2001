@@ -13,6 +13,9 @@ files:
 - name: LinkedList.py
   visible: true
   learner_created: true
+- name: node.py
+  visible: true
+  learner_created: true
 status: Solved
 feedback:
   time: Wed, 05 Jan 2022 12:06:13 UTC
