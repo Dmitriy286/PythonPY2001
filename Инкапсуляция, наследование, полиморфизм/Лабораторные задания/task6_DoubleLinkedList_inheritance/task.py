@@ -70,6 +70,7 @@ class LinkedList:
         return f"{self.to_list()}"
 
 
-class DoubleLinkedList(LinkedList)
+class DoubleLinkedList(LinkedList):
+
 
 # TODO Реализовать класс DoubleLinkedList
