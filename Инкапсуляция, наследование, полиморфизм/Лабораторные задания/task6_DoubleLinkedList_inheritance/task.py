@@ -1,6 +1,6 @@
 from typing import Any, Iterable, Optional
 
-from node import Node
+from node import DoubleLinkedNode as Node
 
 
 class LinkedList:
@@ -72,5 +72,51 @@ class LinkedList:
 
 class DoubleLinkedList(LinkedList):
 
+    # не вижу смысла в переопределении конструктора - он принимает тот же аргумент (data)
+    # все работает после переопределения только одного метода linked_nodes.
+    # Есть ли смысл в переопределении еще чего-либо?
 
+    # Как инкапсулировать методы?
+
+    @staticmethod
+    def linked_nodes(left_node: Node, right_node: Optional[Node] = None) -> None:
+        """
+        Функция, которая связывает между собой два узла.
+
+        :param left_node: Левый или предыдущий узел
+        :param right_node: Правый или следующий узел
+
+        """
+        left_node.next = right_node
+        right_node.prev = left_node  #добавил ссылку правой ноды на предыдущую
+
+
+    # возможно, нужно инкапсулировать head и tail, потому что получается их изменять в ифмэйне. Как это сделать?
+    # моя попытка (не работает):
+
+        # @property
+        # def head(self):
+        #     return self._head
+        #
+        # @head.setter
+        # def head(self, node):
+        #     if not isinstance(node, (type(None), Node)):
+        #         raise TypeError("Руки прочь")
+        #     self._head = None
+
+
+
+
+if __name__ == "__main__":
+    dll_1 = DoubleLinkedList([1, 2, 3, 4])
+    print(str(dll_1))
+    print(repr(dll_1))
+    print(dll_1[1])
+    print(repr(dll_1.head))
+    print(repr(dll_1.tail))
+    dll_1.head = 1
+    print(repr(dll_1.head))
+    print(repr(dll_1.tail))
+    print(str(dll_1))
+    print(repr(dll_1))
 # TODO Реализовать класс DoubleLinkedList

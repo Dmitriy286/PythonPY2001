@@ -68,5 +68,8 @@ if __name__ == "__main__":
     print(repr(DLNode_0))
     print(repr(DLNode_2))
     print(repr(LinkedNode))
+    DLNode_2.next = 6
+    print(str(DLNode_2))
+    print(repr(DLNode_2))
 
 # TODO реализовать класс DoubleLinkedNode
