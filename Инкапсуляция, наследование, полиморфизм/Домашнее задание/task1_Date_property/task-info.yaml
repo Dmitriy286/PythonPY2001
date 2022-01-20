@@ -9,7 +9,7 @@ files:
       # TODO какой декоратор следует применить?
           def is_leap_year(self, year: int) -> bool:
     initial_state:
-      length: 88
+      length: 54
       offset: 418
     initialized_from_dependency: false
     selected: true
@@ -21,8 +21,8 @@ files:
     length: 129
     placeholder_text: '...  # TODO записать условие проверки високосного года'
     initial_state:
-      length: 54
-      offset: 567
+      length: 129
+      offset: 533
     initialized_from_dependency: false
     selected: false
     status: Solved
@@ -33,8 +33,8 @@ files:
     length: 191
     placeholder_text: '...  # TODO вернуть количество дней указанного месяца'
     initial_state:
-      length: 53
-      offset: 771
+      length: 191
+      offset: 812
     initialized_from_dependency: false
     selected: true
     status: Solved
@@ -48,8 +48,8 @@ files:
     placeholder_text: '...  # TODO если указанный набор день, месяц и год неверны,
       то вызвать ошибку ValueError'
     initial_state:
-      length: 88
-      offset: 957
+      length: 158
+      offset: 1136
     initialized_from_dependency: false
     selected: true
     status: Solved
@@ -61,7 +61,7 @@ files:
     placeholder_text: '# TODO записать getter и setter для дня'
     initial_state:
       length: 39
-      offset: 1051
+      offset: 1300
     initialized_from_dependency: false
     selected: true
     status: Solved
@@ -82,7 +82,7 @@ files:
     placeholder_text: '# TODO записать getter и setter для месяца'
     initial_state:
       length: 42
-      offset: 1096
+      offset: 2275
     initialized_from_dependency: false
     selected: false
     status: Solved
@@ -103,7 +103,7 @@ files:
     placeholder_text: '# TODO записать getter и setter для года'
     initial_state:
       length: 40
-      offset: 1144
+      offset: 2323
     initialized_from_dependency: false
     selected: false
     status: Solved

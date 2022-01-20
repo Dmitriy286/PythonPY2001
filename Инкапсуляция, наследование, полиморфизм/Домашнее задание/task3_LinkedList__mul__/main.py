@@ -71,7 +71,7 @@ class LinkedList:
         return f"{self.to_list()}"
 
     def __add__(self, other: "LinkedList") -> "LinkedList":
-        if not isinstance(other, LinkedList):
+        if not isinstance(other, (LinkedList, list)):
             raise TypeError
 
         for item in other:
@@ -80,7 +80,24 @@ class LinkedList:
         return self
 
     def __mul__(self, other: int) -> "LinkedList":
-        ... # TODO реализовать метод клонирования последовательности
+        if not isinstance(other, int):
+            raise TypeError
+        # for _ in range(other):
+        list_ = self.to_list()
+        for _ in range(other - 1):
+            for value in list_:
+                self.append(value)
+
+        # for items in repeat(self.to_list(), other-1):
+        #     for item in items:
+        #         self.append(item)
+
+
+        #fixme почему не получается просто скалдывать self с self?
+
+        return self
+
+        # TODO реализовать метод клонирования последовательности
 
 
 if __name__ == "__main__":
