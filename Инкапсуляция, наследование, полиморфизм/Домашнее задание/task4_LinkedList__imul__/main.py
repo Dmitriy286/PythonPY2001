@@ -108,8 +108,19 @@ class LinkedList:
         return LinkedList(other * self.to_list())
 
     def __imul__(self, other: int) -> "LinkedList":
+        if not isinstance(other, int):
+            raise TypeError
+        #
+        # list_ = self.to_list()
+        # for _ in range(other - 1):
+        #     for value in list_:
+        #         self.append(value)
+
+        return self * other
         ...  # TODO определить одновременное умножение и присваивание
 
+
+#fixme в чем отличие с mul? Работает и без imul
 
 if __name__ == "__main__":
     list_ = [1, 2, 3]

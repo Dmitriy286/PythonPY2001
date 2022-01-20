@@ -89,14 +89,19 @@ class LinkedList:
         if not isinstance(other, int):
             raise TypeError
 
-        for items in repeat(self.to_list(), other-1):
-            for item in items:
-                self.append(item)
+        list_ = self.to_list()
+        for _ in range(other - 1):
+            for value in list_:
+                self.append(value)
+
+        # for items in repeat(self.to_list(), other-1):
+        #     for item in items:
+        #         self.append(item)
 
         return self
 
     def __rmul__(self, other: int) -> "LinkedList":
-        ...  # TODO определить правостороннее умножение
+        return LinkedList(other * self.to_list())  # TODO определить правостороннее умножение
 
 
 if __name__ == "__main__":
