@@ -3,7 +3,7 @@ from functools import total_ordering
 
 from node import Node
 
-
+@total_ordering
 # TODO задекорировать класс
 class LinkedList:
     def __init__(self, data: Iterable = None):
@@ -87,11 +87,29 @@ class LinkedList:
 
         return True
 
+    def __lt__(self, other):
+        # if len(self) < len(other):
+        #     return True
+        # else:
+        #     return False
+
+
+        if len(self) > len(other):
+            return False
+        elif len(self) < len(other):
+            return True
+        else:
+            for item_self, item_other in zip(self, other):
+                if item_self >= item_other:
+                    return False
+
+        return True
+
     # TODO определить метод __lt__
 
 
 if __name__ == "__main__":
-    ll_1 = LinkedList(range(5))
+    ll_1 = LinkedList(range(6))
     ll_2 = LinkedList(range(5))
 
     print(ll_1 >= ll_2)
@@ -99,3 +117,5 @@ if __name__ == "__main__":
 
     print(ll_1 > ll_2)
     print(ll_1 < ll_2)
+
+    #fixme кажется, перепутано

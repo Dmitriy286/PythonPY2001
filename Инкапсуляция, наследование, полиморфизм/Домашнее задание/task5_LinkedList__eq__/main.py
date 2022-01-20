@@ -72,6 +72,21 @@ class LinkedList:
     def __len__(self):
         return self.len
 
+    def __eq__(self, other):
+        # if self is other:
+        #     return True
+        # else:
+        #     return False
+
+        # return self is other
+    #fixme в описании в интернете метод __eq__ немного про другое
+    #fixme можно попросить уточнить задания?
+
+        if len(self) == len(other):
+            return True
+        else:
+            return False
+
     # TODO определить метод __eq__
 
 
