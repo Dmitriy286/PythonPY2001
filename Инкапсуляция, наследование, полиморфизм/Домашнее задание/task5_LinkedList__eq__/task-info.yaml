@@ -3,7 +3,7 @@ files:
 - name: main.py
   visible: true
   placeholders:
-  - offset: 2548
+  - offset: 2178
     length: 30
     placeholder_text: '# TODO определить метод __eq__'
     initial_state:
@@ -165,5 +165,5 @@ files:
 status: Solved
 feedback:
   message: Congratulations!
-  time: Thu, 20 Jan 2022 13:42:32 UTC
+  time: Thu, 20 Jan 2022 18:27:35 UTC
 record: -1

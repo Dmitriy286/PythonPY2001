@@ -92,6 +92,7 @@ class LinkedList:
         return self + other
 
     def __mul__(self, other: int) -> "LinkedList":
+        print("test")
         if not isinstance(other, int):
             raise TypeError
 
@@ -102,12 +103,14 @@ class LinkedList:
         return self
 
     def __rmul__(self, other: int) -> "LinkedList":
+        print("test")
         if not isinstance(other, int):
             raise TypeError
 
         return LinkedList(other * self.to_list())
 
     def __imul__(self, other: int) -> "LinkedList":
+        print("__imul__")
         if not isinstance(other, int):
             raise TypeError
         #

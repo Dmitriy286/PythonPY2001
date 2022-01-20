@@ -39,9 +39,9 @@ class DoubleLinkedNode(Node):
         self.prev = prev
 
     def __repr__(self) -> str:
-        prev__ = None if self.prev is None else f"{self.__class__.__name__}(\"{self.value}\")"
-        next__ = None if self.next is None else f"{self.__class__.__name__}(\"{self.value}\")"
-        return f"{self.__class__.__name__}(\"{self.value}\", {next__}, {prev__})"
+        prev__ = None if self.prev is None else f"{self.__class__.__name__}({repr(self.value)})"
+        next__ = None if self.next is None else f"{self.__class__.__name__}({repr(self.value)})"
+        return f"{self.__class__.__name__}({repr(self.value)}, {next__}, {prev__})"
 
 
 
@@ -68,7 +68,7 @@ if __name__ == "__main__":
     print(repr(DLNode_0))
     print(repr(DLNode_2))
     print(repr(LinkedNode))
-    DLNode_2.next = 6
+    # DLNode_2.next = 6
     print(str(DLNode_2))
     print(repr(DLNode_2))
 

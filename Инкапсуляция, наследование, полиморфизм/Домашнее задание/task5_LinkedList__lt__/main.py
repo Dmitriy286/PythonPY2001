@@ -110,7 +110,7 @@ class LinkedList:
 
 if __name__ == "__main__":
     ll_1 = LinkedList(range(6))
-    ll_2 = LinkedList(range(5))
+    ll_2 = LinkedList(range(7))
 
     print(ll_1 >= ll_2)
     print(ll_1 <= ll_2)

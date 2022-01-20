@@ -1,14 +1,14 @@
 from typing import Any, Iterable, Optional
 
-from node import DoubleLinkedNode as Node
+from node import Node, DoubleLinkedNode as Dll
 
 
 class LinkedList:
     def __init__(self, data: Iterable = None):
         """Конструктор связного списка"""
         self.len = 0
-        self.head: Optional[Node] = None
-        self.tail = self.head
+        self._head: Optional[Node] = None
+        self.tail = self._head
 
         if data is not None:
             for value in data:
@@ -18,8 +18,8 @@ class LinkedList:
         """ Добавление элемента в конец связного списка. """
         append_node = Node(value)
 
-        if self.head is None:
-            self.head = self.tail = append_node
+        if self._head is None:
+            self._head = self.tail = append_node
         else:
             self.linked_nodes(self.tail, append_node)
             self.tail = append_node
@@ -34,7 +34,7 @@ class LinkedList:
         if not 0 <= index < self.len:  # для for
             raise IndexError()
 
-        current_node = self.head
+        current_node = self._head
         for _ in range(index):
             current_node = current_node.next
 
@@ -79,7 +79,7 @@ class DoubleLinkedList(LinkedList):
     # Как инкапсулировать методы?
 
     @staticmethod
-    def linked_nodes(left_node: Node, right_node: Optional[Node] = None) -> None:
+    def linked_nodes(left_node: Dll, right_node: Optional[Dll] = None) -> None:
         """
         Функция, которая связывает между собой два узла.
 
@@ -90,19 +90,36 @@ class DoubleLinkedList(LinkedList):
         left_node.next = right_node
         right_node.prev = left_node  #добавил ссылку правой ноды на предыдущую
 
+    def append(self, value: Any):
+        """ Добавление элемента в конец связного списка. """
+        append_node = Dll(value)
+
+        if self._head is None:
+            self._head = self.tail = append_node
+        else:
+            self.linked_nodes(self.tail, append_node)
+            self.tail = append_node
+
+        self.len += 1
+
+    @property
+    def head(self):
+        return self._head
+
+
 
     # возможно, нужно инкапсулировать head и tail, потому что получается их изменять в ифмэйне. Как это сделать?
     # моя попытка (не работает):
 
-        # @property
-        # def head(self):
-        #     return self._head
-        #
-        # @head.setter
-        # def head(self, node):
-        #     if not isinstance(node, (type(None), Node)):
-        #         raise TypeError("Руки прочь")
-        #     self._head = None
+    # @property
+    # def head(self):
+    #     return self._head
+    #
+    # @head.setter
+    # def head(self, node):
+    #     if not isinstance(node, (type(None), Node)):
+    #         raise TypeError("Руки прочь")
+    #     self._head = None
 
 
 
@@ -114,9 +131,12 @@ if __name__ == "__main__":
     print(dll_1[1])
     print(repr(dll_1.head))
     print(repr(dll_1.tail))
-    dll_1.head = 1
+    # dll_1.head = 1
     print(repr(dll_1.head))
     print(repr(dll_1.tail))
     print(str(dll_1))
     print(repr(dll_1))
+
+    print(type(dll_1.head))
+
 # TODO Реализовать класс DoubleLinkedList

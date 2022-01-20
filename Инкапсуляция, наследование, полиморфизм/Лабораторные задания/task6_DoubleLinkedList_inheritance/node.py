@@ -38,8 +38,8 @@ class DoubleLinkedNode(Node):
         self.prev = prev
 
     def __repr__(self) -> str:
-        prev__ = None if self.prev is None else f"{self.__class__.__name__}({self.value})"
-        next__ = None if self.next is None else f"{self.__class__.__name__}({self.value})"
+        prev__ = None if self.prev is None else f"{self.__class__.__name__}({repr(self.value)})"
+        next__ = None if self.next is None else f"{self.__class__.__name__}({repr(self.value)})"
         return f"{self.__class__.__name__}({self.value}, {next__}, {prev__})"
 
 

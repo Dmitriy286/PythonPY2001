@@ -80,8 +80,8 @@ class Date:
     # TODO записать getter и setter для года
 
     def __str__(self):
-        return f"{self.__class__.__name__} ({self.day:<2}, {self.month:<2}, {self.year:<4})"
+        return f"{self.__class__.__name__} ({self.day:0>2}.{self.month:0>2}.{self.year:>4})"
 
 if __name__ == "__main__":
-    date_1 = Date(29, 2, 2021)
+    date_1 = Date(28, 2, 2021)
     print(date_1)
