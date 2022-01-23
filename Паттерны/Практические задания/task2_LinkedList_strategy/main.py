@@ -27,7 +27,7 @@ if __name__ == '__main__':
     driver = SimpleFileFactoryMethod.get_driver() # TODO инициализировать драйвер и считать данные
     ll.driver = driver
     ll.read()
-    print(ll)
+    print(ll, type(ll))
 
     print("Записать данные в файл по умолчанию")
     new_driver = SimpleFileFactoryMethod.get_driver()

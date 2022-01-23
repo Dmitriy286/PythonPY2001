@@ -23,7 +23,13 @@ class SimpleFileFactoryMethod(DriverFactoryMethod):
         return SimpleFileDriver(filename)
 
 
-#
+class JsonFileDriverFactoryMethod(SimpleFileFactoryMethod):
+
+    @classmethod
+    def get_driver(cls) -> JsonFileDriver:
+        filename = input("Enter name").strip()
+
+        return JsonFileDriver(filename)
 
 
 if __name__ == '__main__':

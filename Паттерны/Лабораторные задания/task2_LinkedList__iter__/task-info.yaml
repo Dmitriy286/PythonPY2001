@@ -4,28 +4,28 @@ files:
   visible: true
   placeholders:
   - offset: 2238
-    length: 106
+    length: 85
     placeholder_text: '...  # TODO написать функцию-генератор, которая будет возвращать
       узлы связного списка'
     initial_state:
       length: 85
       offset: 2238
     initialized_from_dependency: false
-    selected: true
+    selected: false
     status: Failed
     encrypted_possible_answer: |-
       current_node = self.head
               for _ in range(self.len):
                   yield current_node
                   current_node = current_node.next
-  - offset: 2612
-    length: 64
+  - offset: 2417
+    length: 56
     placeholder_text: '# TODO реализовать функцию-генератор по значениям списка'
     initial_state:
       length: 56
       offset: 2417
     initialized_from_dependency: false
-    selected: true
+    selected: false
     status: Failed
     encrypted_possible_answer: |-
       for node in self.nodes_iterator():
@@ -169,7 +169,7 @@ files:
 status: Failed
 feedback:
   message: Incorrect
-  time: Thu, 20 Jan 2022 18:17:02 UTC
+  time: Sun, 23 Jan 2022 13:37:48 UTC
   expected: |
     Вызван метод "__iter__"
     1
@@ -177,7 +177,7 @@ feedback:
     3
   actual: |
     Вызван метод "__iter__"
-    1 <class 'node.Node'>
-    2 <class 'node.Node'>
-    3 <class 'node.Node'>
+    1 <class 'int'>
+    2 <class 'int'>
+    3 <class 'int'>
 record: -1

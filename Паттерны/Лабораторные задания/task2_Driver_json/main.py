@@ -1,6 +1,8 @@
 import json
+
 from typing import Iterable
 from abc import ABC, abstractmethod
+
 
 
 class IStructureDriver(ABC):
@@ -46,16 +48,40 @@ class JsonFileDriver(IStructureDriver):
         self.filename = filename
 
     def read(self) -> list:
+        """
+        Считывает и записывает данные в (например LinkedList)
+        :param data:
+        :return:
+        """
+
         with open(self.filename, "r") as f:
-            json_data = [value for value]
-            json.read
+            json_data = json.load(f)
+            return json_data
+
+
 
     def write(self, data: list) -> None:
-        pass
 
+        """
+        Считывает из (например LinkedList) и записывает в файл
+        :param data:
+        :return:
+        """
+
+        if not isinstance(data, list):
+            raise TypeError("Not list sent")
+
+        with open(self.filename, "w") as f:
+            json.dump(data, f)
 # TODO Реализовать класс JsonFileDriver
 
 
 if __name__ == "__main__":
-    # Write your solution here
-    pass
+    jsndrv = JsonFileDriver("somefilename.json")
+
+    jsndrv.write([1, 2, 3])
+
+    for_print = jsndrv.read()
+    print(for_print)
+
+

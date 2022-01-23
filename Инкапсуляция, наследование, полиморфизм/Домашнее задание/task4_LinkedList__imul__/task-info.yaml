@@ -3,7 +3,7 @@ files:
 - name: main.py
   visible: true
   placeholders:
-  - offset: 3284
+  - offset: 3531
     length: 61
     placeholder_text: '...  # TODO определить одновременное умножение и присваивание'
     initial_state:
@@ -11,7 +11,7 @@ files:
       offset: 3214
     initialized_from_dependency: false
     selected: true
-    status: Failed
+    status: Solved
     encrypted_possible_answer: |-
       if not isinstance(other, int):
                   raise TypeError
@@ -187,16 +187,8 @@ files:
             self.is_valid(next_)
             self._next = next_
   learner_created: false
-status: Failed
+status: Solved
 feedback:
-  message: Incorrect
-  time: Thu, 20 Jan 2022 18:25:59 UTC
-  expected: |
-    [1, 2, 3]
-    [1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3]
-  actual: |
-    [1, 2, 3]
-    __imul__
-    test
-    [1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3]
+  message: Congratulations!
+  time: Thu, 20 Jan 2022 13:02:12 UTC
 record: -1

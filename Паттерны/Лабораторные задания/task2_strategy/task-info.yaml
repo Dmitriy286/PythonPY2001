@@ -3,15 +3,15 @@ files:
 - name: main.py
   visible: true
   placeholders:
-  - offset: 368
+  - offset: 627
     length: 44
     placeholder_text: '# TODO свойство для driver (getter + setter)'
     initial_state:
       length: 44
       offset: 368
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: |-
       @property
           def driver(self):
@@ -20,25 +20,25 @@ files:
           @driver.setter
           def driver(self, driver: IStructureDriver):
               self._driver = driver
-  - offset: 827
-    length: 45
+  - offset: 1083
+    length: 78
     placeholder_text: '...  # TODO инициализировать SimpleFileDriver'
     initial_state:
       length: 45
       offset: 827
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: SimpleFileFactoryMethod.get_driver()
-  - offset: 918
-    length: 43
+  - offset: 1288
+    length: 50
     placeholder_text: '...  # TODO инициализировать JsonFileDriver'
     initial_state:
       length: 43
       offset: 918
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: JsonFileDriverFactoryMethod.get_driver()
   text: |
     from typing import Iterable
@@ -224,7 +224,7 @@ files:
 - name: drivers.py
   visible: true
   placeholders:
-  - offset: 1172
+  - offset: 1830
     length: 6
     placeholder_text: '# TODO'
     dependency:
@@ -239,7 +239,7 @@ files:
       offset: 1172
     initialized_from_dependency: false
     selected: false
-    status: Unchecked
+    status: Solved
     encrypted_possible_answer: |-
       class JsonFileDriver(IStructureDriver):
           def __init__(self, json_filename):
@@ -319,7 +319,7 @@ files:
   visible: true
   placeholders:
   - offset: 641
-    length: 1
+    length: 208
     placeholder_text: '#'
     dependency:
       section: Паттерны
@@ -332,8 +332,8 @@ files:
       length: 1
       offset: 641
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: |-
       class JsonFileDriverFactoryMethod(DriverFactoryMethod):
           DEFAULT_NAME = 'untitled.json'
@@ -392,6 +392,14 @@ files:
     8
     9
   learner_created: false
-status: Unchecked
+- name: test.txt
+  visible: true
+  learner_created: true
+- name: tets.txt
+  visible: true
+  learner_created: true
+status: Solved
+feedback:
+  time: Sun, 23 Jan 2022 15:23:28 UTC
 record: -1
 post_submission_on_open: true

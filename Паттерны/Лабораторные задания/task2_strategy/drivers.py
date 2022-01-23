@@ -40,7 +40,35 @@ class SimpleFileDriver(IStructureDriver):
     def __repr__(self):
         return f"{self.__class__.__name__}(\"{self.filename}\")"
 
+class JsonFileDriver(IStructureDriver):
+    def __init__(self, filename):
+        self.filename = filename
 
+    def read(self) -> list:
+        """
+        Считывает и записывает данные в (например LinkedList)
+        :param data:
+        :return:
+        """
+
+        with open(self.filename, "r") as f:
+            json_data = json.load(f)
+            return json_data
+
+
+
+    def write(self, data: list) -> None:
+
+        """
+        Считывает из (например LinkedList) и записывает в файл
+        :param data:
+        :return:
+        """
+
+        data = [value for value in data]
+
+        with open(self.filename, "w") as f:
+            json.dump(data, f)
 # TODO
 
 
