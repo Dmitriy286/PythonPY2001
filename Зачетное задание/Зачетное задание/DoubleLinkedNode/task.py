@@ -40,6 +40,7 @@ class Node:
 class DoubleLinkedNode(Node):
 
     def __init__(self, value: Any, prev: Optional["Node"] = None, next_: Optional["Node"] = None):
+
         super().__init__(value, next_)
         self.prev = prev
 

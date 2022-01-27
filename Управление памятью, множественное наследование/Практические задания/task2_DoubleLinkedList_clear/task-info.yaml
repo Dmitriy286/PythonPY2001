@@ -7,7 +7,7 @@ files:
     length: 4
     placeholder_text: 'self._prev  # TODO объект теперь вызываемый'
     initial_state:
-      length: 43
+      length: 4
       offset: 351
     initialized_from_dependency: false
     selected: true
@@ -17,8 +17,8 @@ files:
     length: 86
     placeholder_text: 'self._prev = prev  # TODO сделать слабую ссылку'
     initial_state:
-      length: 47
-      offset: 493
+      length: 86
+      offset: 454
     initialized_from_dependency: false
     selected: true
     status: Solved

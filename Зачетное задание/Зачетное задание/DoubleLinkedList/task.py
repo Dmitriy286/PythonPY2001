@@ -2,9 +2,40 @@ from abc import abstractmethod
 from collections.abc import MutableSequence
 from typing import overload, _T, Iterable, Any, Optional
 
+from node import #fixme
 
 class LinkedList(MutableSequence):
-    def __init__(self, value: ):
+    def __init__(self, value: Any, next_: Optional["Node"] = None):
+        self.value = value
+        self.next = next_
+
+        self.head: Optional[Node] = None
+        self.tail: Optional[Node] = None
+        self.len = 0
+
+    def is_valid(self, node: Optional["Node"] = None):
+
+        if not isinstance(node, (Node, type(None))):
+            raise TypeError("Передана не нода")
+
+    def step_by_step(self, index) -> "Node":
+        if index < 0:
+            raise ValueError("Передано отрицательно число")
+
+        if index > self.len - 1:
+            raise ValueError("Передан индекс, превышающий значение длины списка")
+
+        if not isinstance(index, int):
+            raise TypeError("Индекс должен быть целым числом")
+
+        return self[index]
+
+    def test_step_by_step
+
+        #ожидаю увидеть возвращенный узел
+
+    def __len__(self) -> int:
+        return self.len
 
 
     def insert(self, index: int, value: _T) -> None:

@@ -7,8 +7,8 @@ files:
     length: 104
     placeholder_text: '...  # TODO реализовать очистку списка'
     initial_state:
-      length: 38
-      offset: 2357
+      length: 104
+      offset: 2269
     initialized_from_dependency: false
     selected: true
     status: Failed
