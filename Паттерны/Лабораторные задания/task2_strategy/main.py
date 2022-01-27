@@ -31,6 +31,7 @@ class LinkedListWithDriver(LinkedList):
     def write(self):
         """ С помощью драйвера записать данные из LinkedList. """
         self.driver.write(self)
+        self.driver.write(data=self)
 
 
 if __name__ == '__main__':

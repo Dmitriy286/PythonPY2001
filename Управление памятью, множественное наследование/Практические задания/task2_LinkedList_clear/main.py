@@ -10,6 +10,7 @@ class LinkedList:
         self.head: Optional[Node] = None
         self.tail = self.head
 
+
         if data is not None:
             for value in data:
                 self.append(value)
@@ -76,8 +77,11 @@ class LinkedList:
             current_node = current_node.next
 
     def clear(self):
-        ...  # TODO реализовать очистку списка
-
+        self.head = None
+        self.tail = None
+        self.len = 0
+        # TODO реализовать очистку списка
+    # node_ = Node(10)
 
 if __name__ == '__main__':
     ll = LinkedList([1, 2, 3, 4, 5])

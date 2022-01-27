@@ -1,7 +1,9 @@
 # TODO Реализовать LinkedList как MutableSequence
 from collections.abc import MutableSequence
 from typing import Any, Optional
-# from typing import overload
+from typing import overload
+
+from
 
 
 class LinkedList(MutableSequence):
@@ -57,6 +59,17 @@ class LinkedList(MutableSequence):
             self[i - 1].next = current_node
 
         self.len += 1
+
+#     def step_by_step(self) -> "Node":
+#         ...
+#
+#
+# class DoubleLL(LinkedList):
+#     ...
+#     @overload
+#     def step_by_step(self) -> "dLLNode":
+#         ...
+#
 
 if __name__ == "__main__":
     linked_list = LinkedList([1, 2, 3])
