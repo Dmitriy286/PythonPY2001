@@ -154,3 +154,70 @@ print(qq)
 print("-------------------------")
 print(qq())
 print("-------------------------")
+
+import sys
+a = 546
+print(sys.getrefcount(a))
+n = [1, 2, 3]
+print(sys.getrefcount(n))
+# del n
+# print(sys.getrefcount(n))
+print(sys.getrefcount(None))
+
+
+
+
+from weakref import ref
+class A:
+    def __init__(self, a):
+        self.a = a
+
+a = A(5)
+b = a
+
+print(sys.getrefcount(a))
+
+class A:
+    def __init__(self, a):
+        self.a = a
+
+a = A(5)
+weak_b = ref(a)
+
+print(sys.getrefcount(a))
+
+
+print(weak_b)
+print(weak_b().a)
+
+print(sys.getrefcount(weak_b))
+b = weak_b().a
+print(sys.getrefcount(a))
+
+# import gc
+#
+# print(gc.collect())
+#
+#
+# def insert(self, index: int, value: Any) -> None:
+#     if self.len - 1 < i < 0:
+#         raise ValueError()
+#
+#     if i == 0:
+#         insert_node = self(value)
+#         self.head = insert_node
+#         self.head.next = self[i]
+#
+#     elif i > self.len - 1:
+#         insert_node = self(value)
+#         self[self.len - 1].next = insert_node
+#         self.tail = insert_node
+#
+#     else:
+#         insert_node = self(value)
+#         insert_node.next = self[i]
+#         self[i - 1].next = insert_node
+#
+#     self.len += 1
+
+# step_by_step returns Node on index

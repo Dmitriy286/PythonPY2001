@@ -6,24 +6,23 @@ class Node:
         self.value = value
         self.next = next_
 
-        self.is_valid(next_)
 
     @property
     def next(self):
         return self._next
 
     @next.setter
-    def next(self, next_):
-        if not isinstance(next_, (Node, type(None))):
-            raise TypeError("Передана не нода")
+    def next(self, next_: Optional["Node"]):
+        self.is_valid(next_)
         self._next = next_
 
-    def is_valid(self, next_):
+    @classmethod
+    def is_valid(cls, node: Any):
         """
-        Метод проверки
+        Метод проверки валидности переданной ноды
         :return:
         """
-        if not isinstance(next_, (Node, type(None))):
+        if not isinstance(node, (type(None), cls)):
             raise TypeError("Не нода передана")
 
     def __str__(self):
@@ -39,11 +38,9 @@ class Node:
 
 class DoubleLinkedNode(Node):
 
-    def __init__(self, value: Any, prev: Optional["Node"] = None, next_: Optional["Node"] = None):
+    def __init__(self, value: Any, next_: Optional["Node"] = None, prev: Optional["Node"] = None):
         super().__init__(value, next_)
         self.prev = prev
-
-        self.is_valid(self.prev, self.next)
 
     @property
     def prev(self):
@@ -51,20 +48,8 @@ class DoubleLinkedNode(Node):
 
     @prev.setter
     def prev(self, prev):
-        if not isinstance(prev, (DoubleLinkedNode, type(None))):
-            raise TypeError("Передана не двусвязная нода")
+        self.is_valid(prev)
         self._prev = prev
-
-    def is_valid(self, prev, next_):
-        """
-        Метод
-        :return:
-        """
-        if not isinstance(prev, (DoubleLinkedNode, type(None))):
-            raise TypeError("Не двусвязная нода передана")
-
-        if not isinstance(next_, (DoubleLinkedNode, type(None))):
-            raise TypeError("Не двусвязная нода передана")
 
     def __repr__(self):
         next__ = None if self.next is None else self.next
