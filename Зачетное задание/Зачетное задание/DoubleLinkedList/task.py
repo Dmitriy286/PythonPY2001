@@ -94,15 +94,18 @@ class LinkedList(MutableSequence):
         """
         # self.index_valid(index)
         deleted_node = self.step_by_step_for_node(index)
-        previous_node = self.step_by_step_for_node(index - 1)
-        next_node = self.step_by_step_for_node(index + 1)
+
         if index == 0:
+            next_node = self.step_by_step_for_node(index + 1)
             self._head = next_node
             deleted_node.next = None
-        elif index >= self._len:
+        elif index >= self._len - 1:
+            previous_node = self.step_by_step_for_node(index - 1)
             self._tail = previous_node
             previous_node.next = None
         else:
+            next_node = self.step_by_step_for_node(index + 1)
+            previous_node = self.step_by_step_for_node(index - 1)
             self.linked_nodes(previous_node, next_node)
             deleted_node.next = None
 
@@ -149,7 +152,8 @@ class LinkedList(MutableSequence):
         Метод возвращает список нод
         :return:
         """
-        return [node for node in self]
+        return [node_value for node_value in self]
+#fixme что он берет из self?
 
     def __str__(self) -> str:
         return f"{self.list_of_nodes()}"

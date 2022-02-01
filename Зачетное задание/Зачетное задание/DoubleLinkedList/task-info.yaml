@@ -42,5 +42,11 @@ files:
 - name: test_Node.py
   visible: true
   learner_created: true
+- name: Remove.py
+  visible: true
+  learner_created: true
+- name: Test_Remove.py
+  visible: true
+  learner_created: true
 status: Unchecked
 record: -1

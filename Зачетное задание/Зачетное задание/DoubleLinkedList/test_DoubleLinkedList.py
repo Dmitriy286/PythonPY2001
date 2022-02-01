@@ -5,7 +5,7 @@ from task import LinkedList, DoubleLinkedList
 
 
 class TestLinkedNode(unittest.TestCase):
-    def test_node(self):
+    def test_step_by_step_for_node(self):
         node = Node(5)
         self.assertEqual(True, False)
 
