@@ -61,4 +61,11 @@ class DoubleLinkedNode(Node):
 
 
 if __name__ == "__main__":
-    ...
+    node_1 = Node(1)
+    print(node_1)
+    node_2 = Node(2)
+    print(node_2)
+    node_3 = Node(1, node_2)
+    print(repr(node_3))
+    node_4 = Node(4, node_3)
+    print(repr(node_4))

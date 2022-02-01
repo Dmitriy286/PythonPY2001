@@ -1,6 +1,6 @@
 import unittest
 
-from node import Node, DoubleLinkedNode
+from node import Node, DoubleLinkedNode as Dll
 
 
 class TestNode(unittest.TestCase):
@@ -26,7 +26,12 @@ class TestNode(unittest.TestCase):
 
 
 class TestDLNode(unittest.TestCase):
+    def test_repr(self):
+        dl_node_1 = Dll(1)
+        dl_node_2 = Dll(2)
+        dl_node_3 = Dll(3, dl_node_1, dl_node_2)
 
+        self.assertEqual("DoubleLinkedNode (3, DoubleLinkedNode (2, None, None), DoubleLinkedNode (1, None, None))", repr(dl_node_3))
 
 if __name__ == '__main__':
     unittest.main()
