@@ -21,18 +21,20 @@ class LinkedList(MutableSequence):
         Метод устанавливает длину связанного списка
         :return: целое число
         """
-        self._len = len(self)
         return self._len
 
-    #fixme почему ранее использовали return self.len
 
     # def __iter__(self) -> Iterator:
     #     """
     #     Метод, превращающий связный список в итератор
     #     :return:
     #     """
-    #     return self
-
+    #     len(self)
+    #     #нужно функцию генератор
+    #     current_node = self._head
+    #     for _ in range(len(self)):
+    #         yield current_node.value
+    #         current_node = current_node.next
     #fixme почему не нужен iter?
 
     @staticmethod
@@ -95,7 +97,10 @@ class LinkedList(MutableSequence):
         # self.index_valid(index)
         deleted_node = self.step_by_step_for_node(index)
 
-        if index == 0:
+        if self._len == 1:
+            self._head = None
+            self._tail = None
+        elif index == 0:
             next_node = self.step_by_step_for_node(index + 1)
             self._head = next_node
             deleted_node.next = None
@@ -129,15 +134,14 @@ class LinkedList(MutableSequence):
         self._len += 1
 
     def insert(self, index: int, value: Any) -> None:
-        self.index_valid(index)
+        # self.index_valid(index)
         append_node = self.ClASS_NAME(value)
         if index == 0:
             self.linked_nodes(append_node, self._head)
             self._head = append_node
-
+            self._len += 1
         elif index >= self._len:
             self.append(value)
-
         else:
             current_node = self.step_by_step_for_node(index - 1)
             next_node = self.step_by_step_for_node(index)
@@ -145,7 +149,7 @@ class LinkedList(MutableSequence):
             self.linked_nodes(append_node, next_node)
             self.linked_nodes(current_node, append_node)
 
-        self._len += 1
+            self._len += 1
 
     def list_of_nodes(self) -> list:
         """
@@ -153,7 +157,6 @@ class LinkedList(MutableSequence):
         :return:
         """
         return [node_value for node_value in self]
-#fixme что он берет из self?
 
     def __str__(self) -> str:
         return f"{self.list_of_nodes()}"
@@ -177,13 +180,14 @@ class DoubleLinkedList(LinkedList):
         right_node.prev = left_node
 
 if __name__ == "__main__":
-    ll_1 = LinkedList([1, 2, 3])
+    ll_1 = LinkedList([1, 2, 3, 4, 5])
     print(str(ll_1))
     print(repr(ll_1))
     print(repr(ll_1.list_of_nodes()))
     print(ll_1)
+    print(repr(ll_1.step_by_step_for_node(2)))
 
-    ll_2 = DoubleLinkedList([1, 2, 3])
+    ll_2 = DoubleLinkedList([1, 2, 3, 4, 5])
     print(str(ll_2))
     print(repr(ll_2))
     print(repr(ll_2.list_of_nodes()))
@@ -191,6 +195,10 @@ if __name__ == "__main__":
     print(ll_2.step_by_step_for_node(1))
     print(ll_2.step_by_step_for_node(1).next)
     print(ll_2.step_by_step_for_node(1).prev)
+    print(repr(ll_2.step_by_step_for_node(2)))
 
+    ll_3 = DoubleLinkedList([1])
+    print(str(ll_3))
+    print(repr(ll_3))
 
 
